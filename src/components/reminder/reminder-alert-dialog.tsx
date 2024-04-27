@@ -17,8 +17,14 @@ import {DialogClose} from '@radix-ui/react-dialog';
 import Reminder from './reminder';
 import ReminderTag from './reminder-tag';
 import Link from 'next/link';
+import { Reminder as ReminderType } from "@/types/reminder";
 
-export default function ReminderAlertDialog ({reminder, isTag}) {
+type ReminderFields = {
+  reminder: ReminderType,
+  isTag: boolean,
+}
+
+export default function ReminderAlertDialog ({reminder, isTag}:ReminderFields) {
 
   const {id, title, note} = reminder;
 

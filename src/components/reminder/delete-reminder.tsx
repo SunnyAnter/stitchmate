@@ -11,9 +11,14 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { ReactNode } from 'react';
+
+type DeleteField = {
+  handleDelete:()=>void
+}
 
 
-export default function DeleteReminder ({handleDelete}) {
+export default function DeleteReminder({ handleDelete }:DeleteField):JSX.Element {
 
   return (
     <AlertDialog>
