@@ -18,6 +18,8 @@ import {
 import {useStore} from '@/app/store';
 import {useState, useEffect} from 'react';
 import {Title} from '../ui/title';
+import { FormEvent, ChangeEvent } from 'react';
+
 
 // import {FaGears} from "react-icons/fa6";
 import {MdSettings} from "react-icons/md";
@@ -29,15 +31,19 @@ import ResetAlertDialog from './reset-alert-dialog';
 
 // const SHEET_SIDES = ["top", "right", "bottom", "left"];
 
-const side = "right";
+const side = "right"
+
+type ClassNameType = {
+ className?: string
+}
 
 
-export default function CounterSettings ({className}) {
+export default function CounterSettings ({className}: ClassNameType) {
 
   const {title, setTitle, count, setCount, numOfRows, setNumOfRows} = useStore();
-  const [formTitle, setFormTitle] = useState(title);
-  const [formCount, setFormCount] = useState(count);
-  const [formRows, setFormRows] = useState(numOfRows || '');
+  const [formTitle, setFormTitle] = useState<string>(title);
+  const [formCount, setFormCount] = useState<number | ''>(count);
+  const [formRows, setFormRows] = useState<number | ''>(numOfRows || '');
 
   useEffect(() => {
     setFormRows(numOfRows || '');
@@ -47,23 +53,23 @@ export default function CounterSettings ({className}) {
     setFormCount(count);
   }, [count]);
 
-  function handleSubmit (e) {
+  function handleSubmit (e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     setTitle(formTitle);
     setCount(formCount || 1);
     setNumOfRows(formRows || 0);
   }
 
-  function handleChange (e) {
+  function handleChange (e: ChangeEvent<HTMLInputElement>) {
     setFormTitle(e.target.value);
   }
 
-  function handleCountChange (e) {
+  function handleCountChange (e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
     setFormCount(value ? parseInt(value) : '');
   }
 
-  function handleRowChange (e) {
+  function handleRowChange (e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
     setFormRows(value ? parseInt(value) : '');
   }
@@ -79,7 +85,7 @@ export default function CounterSettings ({className}) {
         <SheetContent side={side}>
           <form onSubmit={handleSubmit}>
             <SheetHeader>
-              <Title>Edit Counter</Title>
+              <Title>Edit Counter</Title>  
             </SheetHeader>
 
             <div className='grid gap-y-5 py-4'>
@@ -94,7 +100,7 @@ export default function CounterSettings ({className}) {
                 <Label variant='inline' htmlFor="count">
                   Count
                 </Label>
-                <Input id="count" typeç="number" value={formCount} variant='inline' min="1" onChange={handleCountChange} />
+                <Input id="count" type="number" value={formCount} variant='inline' min="1" onChange={handleCountChange} />
               </FormField>
 
               <FormField>

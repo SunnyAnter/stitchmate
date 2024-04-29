@@ -4,14 +4,14 @@ import {useMemo} from 'react';
 import useSound from 'use-sound';
 import BackgroundBlob from '../ui/background-blobs';
 
-export default function Counter () {
+export default function Counter (): JSX.Element {
 
   const {count, countUp, clickSoundEnabled} = useStore();
   const blob = useMemo(() => <BackgroundBlob className='absolute fill-sienna-400 top-0 left-0' />, []);
 
   const [play] = useSound('/click-2.mp3');
 
-  function handleClick () {
+  function handleClick (): void {
     countUp();
 
     if (clickSoundEnabled) {
