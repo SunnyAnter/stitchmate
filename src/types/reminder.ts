@@ -4,11 +4,11 @@ export type Reminder = {
     title: string,
     type: string,
     note: string,
-    repeat?: Repeat
+    repeat: Repeat
 }
 
 type Repeat = {
-  interval?: number,
+  interval: number,
   times?: number,
   start?: number,
   from?: number,

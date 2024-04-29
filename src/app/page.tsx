@@ -6,20 +6,16 @@ import Rows from '@/components/counter/rows';
 import CountDownButton from '@/components/counter/count-down-button';
 import ReminderList from '@/components/reminder/reminder-list';
 import {selectNotifiableNextReminders, useStore} from './store';
-import Reminder from '@/components/reminder/reminder';
-import ReminderTag from '@/components/reminder/reminder-tag';
 import ReminderAlertDialog from '@/components/reminder/reminder-alert-dialog';
+import { Reminder } from '@/types/reminder';
 
 // Todo: Edit title -> Rename Component
 // Form Validation 
 
-export default function Page () {
+export default function Page (): JSX.Element {
   return (
     <>
       <CounterTitle className='mt-2 mb-3' />
-      {/* <section className='min-h-5 flex justify-center items-center w-full'>
-        <ReminderNotification />
-      </section > */}
       <section className='w-full flex-1 flex-col flex justify-center' >
         <div className='mb-auto'>
           <div className='flex justify-center w-full min-h-10'>
@@ -40,13 +36,13 @@ export default function Page () {
   );
 }
 
-function ReminderNotification () {
+function ReminderNotification (): JSX.Element {
 
   const nextReminders = useStore(selectNotifiableNextReminders);
 
   return (
     <div className="flex gap-4 position relative z-20 ">
-      {nextReminders.map(reminder => <ReminderAlertDialog key={reminder.id} reminder={reminder} isTag={true} />)}
+      {nextReminders.map((reminder: Reminder) => <ReminderAlertDialog key={reminder.id} reminder={reminder} isTag={true} />)}
     </div>
   );
 }
