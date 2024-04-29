@@ -1,6 +1,6 @@
 export type Reminder = {
-    id: number,
-    notification: boolean,
+    id?: number,
+    notification?: boolean,
     title: string,
     type: string,
     note: string,

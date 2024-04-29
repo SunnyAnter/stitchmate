@@ -21,14 +21,10 @@ import {
 
 import ToggleSound from './toggle-sound';
 
-// const SHEET_SIDES = ["top", "right", "bottom", "left"];
 
 const side = "left";
 
-export default function Menu () {
-
-
-  function handleSubmit () { }
+export default function Menu (): JSX.Element {
 
   return (
     <div className="flex items-center justify-center">

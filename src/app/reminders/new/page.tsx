@@ -1,27 +1,27 @@
 'use client';
 
-import {useState, useEffect} from "react";
 import {useStore} from '@/app/store';
 import ReminderForm from '@/components/reminder/reminder-form';
 import {useRouter} from 'next/navigation';
+import { Reminder } from "@/types/reminder";
 
 
-export default function Page () {
+export default function Page (): JSX.Element {
   const {count, setReminder} = useStore();
   const router = useRouter();
 
-  const reminder = {
+  const reminder: Reminder = {
     type: 'every',
     title: 'my reminder',
     note: '',
     repeat: {
-      interval: '',
-      times: '',
+      interval: 0,
+      times: 0,
       start: count
     }
   };
 
-  function handleSubmit (newReminder) {
+  function handleSubmit (newReminder: Reminder):void {
     setReminder(newReminder);
     router.push("/");
   }

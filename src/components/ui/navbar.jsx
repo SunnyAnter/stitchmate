@@ -25,7 +25,6 @@ export default function Nav () {
   return (
     <>
       <nav className='flex justify-between px-4 py-3'>
-        {/* <CounterMenu /> */}
         {isRoot ? <Menu className='fill-slate-800' /> : <BackButton className='fill-slate-800' />}
         <Logo />
         <CounterSettings className={cn(!isRoot && 'invisible')} />

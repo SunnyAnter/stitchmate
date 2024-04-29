@@ -19,7 +19,6 @@ import {Textarea} from "@/components/ui/textarea";
 import FormField from '@/components/ui/form-field';
 import {useStore} from '@/app/store';
 import makeOrdinal from '@/lib/make-ordinal';
-import {Checkbox} from '../ui/checkbox';
 
 
 export default function ReminderForm ({className, handleFormSubmit, reminder}) {
@@ -106,10 +105,6 @@ export default function ReminderForm ({className, handleFormSubmit, reminder}) {
         onChange={e => setReminderNote(e.target.value)}
         rows="5"
       />
-      {/* <div className='flex flex-start gap-3 py-4'>
-        <Checkbox id='notification' className='' checked={true} />
-        <label htmlFor='notification' className='font-semibold text-base text-slate-800 -mt-1'>Show notification: <span className='font-normal'>Disabling notifications will pause your reminder, preventing it from appearing.</span></label>
-      </div> */}
       {errorMessages.map((msg, index) => <p key={index}>{msg}</p>)}
 
       <Button type="submit">Save changes</Button>
