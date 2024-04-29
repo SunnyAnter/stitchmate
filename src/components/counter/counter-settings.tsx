@@ -85,7 +85,7 @@ export default function CounterSettings ({className}: ClassNameType) {
         <SheetContent side={side}>
           <form onSubmit={handleSubmit}>
             <SheetHeader>
-              <Title>Edit Counter</Title>  
+              <Title >Edit Counter</Title>  
             </SheetHeader>
 
             <div className='grid gap-y-5 py-4'>
