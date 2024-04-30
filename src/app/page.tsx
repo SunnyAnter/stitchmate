@@ -12,7 +12,7 @@ import { Reminder } from '@/types/reminder';
 // Todo: Edit title -> Rename Component
 // Form Validation 
 
-export default function Page (): JSX.Element {
+export default function Page(): JSX.Element {
   return (
     <>
       <CounterTitle className='mt-2 mb-3' />
