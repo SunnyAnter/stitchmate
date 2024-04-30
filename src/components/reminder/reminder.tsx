@@ -17,7 +17,7 @@ export default function Reminder ({reminder}: Props) {
 
   const {title, note, repeat, type} = reminder;
 
-  const typeEvery = <p className='text-sm font-semibold text-sienna-500'>from row {repeat?.start}, every {repeat?.interval}{makeOrdinal(repeat.interval)}, {repeat?.times} times</p>;
+  const typeEvery = <p className='text-sm font-semibold text-sienna-500'>from row {repeat?.start}, every {repeat?.interval}{repeat.interval ? makeOrdinal(repeat.interval) : ''}, {repeat?.times} times</p>;
 
   const typeForRows = <p className='text-sm font-semibold text-sienna-500'>rows {repeat?.from} {`\u2013`} {repeat?.until}</p>;
 
