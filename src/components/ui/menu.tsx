@@ -21,10 +21,13 @@ import {
 
 import ToggleSound from './toggle-sound';
 
-
 const side = "left";
 
-export default function Menu (): JSX.Element {
+type Props = {
+  className?: string
+}
+
+export default function Menu (prop:Props): JSX.Element {
 
   return (
     <div className="flex items-center justify-center">

@@ -13,6 +13,10 @@ import Link from 'next/link';
 
 import {useStore} from '@/app/store';
 
+type Props = {
+  className?: string
+}
+
 
 export default function Nav () {
 
@@ -35,7 +39,7 @@ export default function Nav () {
   );
 }
 
-function BackButton () {
+function BackButton (prop:Props): JSX.Element {
   return (
     <Link href='/'>
       <Button size='icon' variant='ghost'><IoIosArrowBack className='fill-slate-800' size={24} /></Button>
