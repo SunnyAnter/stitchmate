@@ -12,13 +12,16 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { ReactNode } from 'react';
+import { Reminder } from '@/types/reminder';
+import { MouseEventHandler } from 'react';
+
 
 type DeleteField = {
-  handleDelete:()=>void
+  handleDelete: () => void;
+  reminderId?: number
 }
 
-
-export default function DeleteReminder({ handleDelete }:DeleteField):JSX.Element {
+export default function DeleteReminder({ handleDelete, reminderId }:DeleteField):JSX.Element {
 
   return (
     <AlertDialog>
