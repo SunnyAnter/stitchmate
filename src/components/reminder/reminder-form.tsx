@@ -20,7 +20,7 @@ import { Reminder, Repeat } from "@/types/reminder";
 
 
 type Props = {
-  className: string,
+  className?: string,
   handleFormSubmit: (value: Reminder) => void,
   reminder:Reminder
 }
