@@ -15,9 +15,9 @@ import {FaArrowRotateLeft} from "react-icons/fa6";
 
 import {useStore} from '@/app/store';
 
-export default function ResetAlertDialog () {
+export default function ResetAlertDialog ():JSX.Element  {
 
-  const {resetCount} = useStore();
+  const {resetCount}= useStore();
 
   return (
     <AlertDialog>

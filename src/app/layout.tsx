@@ -1,8 +1,13 @@
 import './globals.css';
 import {lato} from '@/components/ui/fonts';
 import Nav from '@/components/ui/navbar';
+import { ReactNode } from 'react';
 
-export default function RootLayout ({children}) {
+type Props = {
+  children: ReactNode  
+}
+
+export default function RootLayout ({children}: Props): JSX.Element {
   return (
     <html lang="en">
       <body className={`${lato.className} antialiased 

@@ -1,6 +1,6 @@
 export type Reminder = {
-    id: number,
-    notification: boolean,
+    id?: number,
+    notification?: boolean,
     title: string,
     type: string,
     note: string,
@@ -8,7 +8,7 @@ export type Reminder = {
 }
 
 type Repeat = {
-  interval?: number,
+  interval: number,
   times?: number,
   start?: number,
   from?: number,

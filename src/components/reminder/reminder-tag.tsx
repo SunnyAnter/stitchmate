@@ -1,6 +1,12 @@
 import shortenText from '@/lib/shorten-text';
 
-export default function ReminderTag ({title}) {
+type TitleType = {
+title: string
+}
+
+
+export default function ReminderTag ({title}: TitleType) {
+
 
   return (
     <div className='bg-viridian-800 rounded-full h-fit w-fit py-px px-4'>

@@ -1,7 +1,7 @@
-export default function makeOrdinal (num:number):string {
+export default function makeOrdinal (num: number):string {
   if (num % 100 > 10 && num % 100 < 20) return 'th';
 
-  const digit:number = num % 10;
+  const digit:number= num % 10;
 
   switch (digit) {
     case 1: return 'st';
