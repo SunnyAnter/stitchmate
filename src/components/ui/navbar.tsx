@@ -18,7 +18,7 @@ type Props = {
 }
 
 
-export default function Nav () {
+export default function Nav ():JSX.Element {
 
   const {numOfRows} = useStore();
   const isRowNums = numOfRows > 0;
@@ -29,7 +29,8 @@ export default function Nav () {
   return (
     <>
       <nav className='flex justify-between px-4 py-3'>
-        {isRoot ? <Menu className='fill-slate-800' /> : <BackButton className='fill-slate-800' />}
+      
+        {isRoot ? <Menu/> : <BackButton />}
         <Logo />
         <CounterSettings className={cn(!isRoot && 'invisible')} />
       </nav>
