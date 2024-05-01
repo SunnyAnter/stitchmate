@@ -12,7 +12,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { ReactNode } from 'react';
-import { Reminder } from '@/types/reminder';
+import { ReminderType } from '@/types/reminder';
 import { MouseEventHandler } from 'react';
 
 

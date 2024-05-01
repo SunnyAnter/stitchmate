@@ -7,7 +7,7 @@ import CountDownButton from '@/components/counter/count-down-button';
 import ReminderList from '@/components/reminder/reminder-list';
 import {selectNotifiableNextReminders, useStore} from './store';
 import ReminderAlertDialog from '@/components/reminder/reminder-alert-dialog';
-import { Reminder } from '@/types/reminder';
+import { ReminderType } from '@/types/reminder';
 
 // Todo: Edit title -> Rename Component
 // Form Validation 
@@ -42,7 +42,7 @@ function ReminderNotification (): JSX.Element {
 
   return (
     <div className="flex gap-4 position relative z-20 ">
-      {nextReminders.map((reminder: Reminder) => <ReminderAlertDialog key={reminder.id} reminder={reminder} isTag={true} />)}
+      {nextReminders.map((reminder: ReminderType) => <ReminderAlertDialog key={reminder.id} reminder={reminder} isTag={true} />)}
     </div>
   );
 }

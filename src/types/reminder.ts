@@ -1,4 +1,4 @@
-export type Reminder = {
+export type ReminderType = {
     id?: number,
     notification?: boolean,
     title: string,

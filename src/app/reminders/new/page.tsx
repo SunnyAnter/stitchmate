@@ -3,14 +3,13 @@
 import {useStore} from '@/app/store';
 import ReminderForm from '@/components/reminder/reminder-form';
 import {useRouter} from 'next/navigation';
-import { Reminder } from "@/types/reminder";
+import { ReminderType } from "@/types/reminder";
 
 
 export default function Page (): JSX.Element {
   const {count, setReminder} = useStore();
   const router = useRouter();
-
-  const reminder: Reminder = {
+  const reminder: ReminderType = {
     type: 'every',
     title: 'my reminder',
     note: '',
@@ -21,7 +20,7 @@ export default function Page (): JSX.Element {
     }
   };
 
-  function handleSubmit (newReminder: Reminder):void {
+  function handleSubmit (newReminder: ReminderType):void {
     setReminder(newReminder);
     router.push("/");
   }

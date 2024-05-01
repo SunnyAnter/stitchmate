@@ -16,13 +16,13 @@ import {Textarea} from "@/components/ui/textarea";
 import FormField from '@/components/ui/form-field';
 import {useStore} from '@/app/store';
 import makeOrdinal from '@/lib/make-ordinal';
-import { Reminder, Repeat } from "@/types/reminder";
+import { ReminderType } from "@/types/reminder";
 
 
 type Props = {
   className?: string,
-  handleFormSubmit: (value: Reminder) => void,
-  reminder:Reminder
+  handleFormSubmit: (value: ReminderType) => void,
+  reminder:ReminderType
 }
 
 type EveryInputProps = {
@@ -66,7 +66,7 @@ export default function ReminderForm ({className, handleFormSubmit, reminder}:Pr
       return false;
     }
 
-    const newReminder: Reminder = {
+    const newReminder: ReminderType = {
       title: reminderTitle,
       type: reminderType,
       note: reminderNote,

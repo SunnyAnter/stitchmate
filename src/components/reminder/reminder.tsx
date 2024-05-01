@@ -6,10 +6,10 @@ import {FaEye} from "react-icons/fa6";
 import {FaEyeSlash} from "react-icons/fa6";
 import {TbZzz} from "react-icons/tb";
 
-import { Reminder } from '@/types/reminder';
+import { ReminderType } from '@/types/reminder';
 
 type Props = {
-  reminder: Reminder
+  reminder: ReminderType
 }
 
 

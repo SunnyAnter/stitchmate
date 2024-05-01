@@ -1,6 +1,5 @@
 import {useStore} from '../../app/store';
 import {useMemo} from 'react';
-
 import useSound from 'use-sound';
 import BackgroundBlob from '../ui/background-blobs';
 
@@ -21,10 +20,12 @@ export default function Counter (): JSX.Element {
 
   return (
     <div className='relative flex items-center justify-center'>
-      <button data-testid='counter-button' className='text-8xl text-center z-10 relative text-zinc-800 p-16' onClick={handleClick}>
-        <span data-testid="count">{count}</span>
+      <button data-testid="increment-count"className='text-8xl text-center z-10 relative text-zinc-800 p-16' onClick={handleClick}>
+        <span>{count}</span>
       </button>
+      <div data-testid="blob">
       {blob}
+      </div>
     </div >
   );
 }

@@ -17,7 +17,7 @@ import {DialogClose} from '@radix-ui/react-dialog';
 import Reminder from './reminder';
 import ReminderTag from './reminder-tag';
 import Link from 'next/link';
-import { Reminder as ReminderType } from "@/types/reminder";
+import { ReminderType } from "@/types/reminder";
 
 type ReminderFields = {
   reminder: ReminderType,
