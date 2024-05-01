@@ -10,8 +10,8 @@ const reminders = [
     type: 'for-rows',
     note: 'RS: Purl to 1 st before marker, sl 1 wiyb, sm, purl to the last 3 sts, w&t',
     repeat: {
-      from: 1,
-      until: 1
+      from: 3,
+      until: 3
     }
   },
 

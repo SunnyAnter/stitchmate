@@ -4,7 +4,8 @@ import CountDownButton from '../src/components/counter/count-down-button';
 import '@testing-library/jest-dom';
 import ReminderForm from '../src/components/reminder/reminder-form';
 import ReminderList from '../src/components/reminder/reminder-list'
-import {useStore} from '@/app/store';
+import Page from '../src/app/page'
+import { useStore } from '@/app/store';
 
 describe('Counter', () => {  
   it('renders blob correctly', () => {
@@ -72,9 +73,15 @@ describe('Reminder', () => {
     render(<ReminderList/>);
     expect(screen.getByText('Short Row 1')).toBeInTheDocument()
   });
-  // it('delete reminder', () => {
-  //   render(<Counter />);
-  //   const blob = screen.getByTestId('blob')
-  //   expect(blob).toBeInTheDocument();
-  // });
+
+   it('renders reminder on reached count notification', () => {
+    render(<Page/>)
+    expect(screen.queryByTestId('Title: Short Row 1')).not.toBeInTheDocument()
+    const incrementButton = screen.getByTestId('increment-count');
+    fireEvent.click(incrementButton);
+    
+    expect(screen.getByTestId('Title: Short Row 1')).toBeInTheDocument()
+
+  });
 })
+

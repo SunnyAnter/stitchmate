@@ -20,7 +20,7 @@ export default function Counter (): JSX.Element {
 
   return (
     <div className='relative flex items-center justify-center'>
-      <button data-testid="increment-count"className='text-8xl text-center z-10 relative text-zinc-800 p-16' onClick={handleClick}>
+      <button data-testid="increment-count" className='text-8xl text-center z-10 relative text-zinc-800 p-16' onClick={handleClick}>
         <span>{count}</span>
       </button>
       <div data-testid="blob">
