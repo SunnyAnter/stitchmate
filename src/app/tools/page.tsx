@@ -57,6 +57,7 @@ export default function Page(): JSX.Element {
   const [from, setFrom] = useState<string>('uk')
   const [to, setTo] = useState<string>('uk');
   const [calc, setCalc] = useState<string>('None');
+  const [currentSelectVal, setCurrentSelectVal] = useState<string>('')
   
   const handleUnitSelectFrom = (value: keyof Size) => {
     setFrom(value)
@@ -64,10 +65,15 @@ export default function Page(): JSX.Element {
   }
   const handleUnitSelectTo = (value: string) => {
     setTo(value)
+    if (currentSelectVal !== '') {
+    const res: Size[] = sizeMapping.filter((size: Size) => size[from as keyof Size] === currentSelectVal)
+    setCalc(res[0][value as keyof Size])
+    }
   }
   const selectValueChange = (value: keyof Size) => {
     const res: Size[] = sizeMapping.filter((size: Size) => size[from as keyof Size] === value)
     setCalc(res[0][to as keyof Size])
+    setCurrentSelectVal(value);
   }
   
   return (
